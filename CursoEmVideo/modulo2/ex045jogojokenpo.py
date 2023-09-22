@@ -11,8 +11,8 @@ print('''Escolha a sua jogada:
 [2] - Papel
 [3] - Tesoura''') # mostrando na tela as opções para o jogador
 
-jogador = int(input('Qual a sua jogada? '))
 # atribuindo o valor da jogada digitada pelo usuário na variavel jogador
+jogador = int(input('Qual a sua jogada? '))
 
 # condição para jogador maior que 3
 if jogador > 3:
