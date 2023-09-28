@@ -1,0 +1,105 @@
+-- Criando um bando de dados
+create database db_tecstart;
+
+-- Colocando o banco em uso;
+use db_tecstart;
+
+-- Criando a tabela de clientes
+create table tbl_cliente (
+id_cliente  int  primary key  auto_increment,
+nome  varchar(30),
+cpf  varchar(15),
+email  varchar(30),
+telefone  varchar(15),
+idade  int
+);
+
+-- Consultando a tabela cliente
+
+select *
+from tbl_cliente;
+
+-- Instalar o conector MySQL no VSCode
+
+-- No terminal do VSCode digite o seguinte comando:
+pip install mysql-connector
+
+-- Após instalado o conector do MySQL agora vamos instalar o conector para integrar o MySQL no Python
+pip install mysql-connector-python
+
+-- Instalar a extensão do MySQL Jun Han
+
+-- Importando a biblioteca para conexão com o MySQL e criando a conexão com o banco de dados
+import mysql.connector
+
+conection = mysql.connector.connect(
+	host = 'localhost',
+	user = 'root',
+	password = ' ',
+	database = 'db_tecstart'
+)
+
+-- Instanciando uma conexão com o banco
+newConection = conection.cursor()
+
+-- inserindo dados no banco de dados
+insert = 'INSERT INTO tbl_cliente (nome, cpf, email, telefone, idade) VALUES ("Bruno", "12345678901", "btcstart@gmail.com", "999887766", 30)'
+
+newConection.execute(insert)
+conection.commit()
+
+-- fechando a conexão com o banco
+newConection.close()
+conection.close()
+
+-- inserindo dados no banco de dados
+nomeCliente = "Laura"
+cpfCliente = "14725836987"
+emailCliente = "lauratecstart@gmail.com"
+telCliente = "988887755"
+idadeCliente = 20
+
+insert = f'INSERT INTO tbl_cliente (nome, cpf, email, telefone, idade) VALUES ("{nomeCliente}","{cpfCliente}","{emailCliente}","{telCliente}","{idadeCliente}")'
+
+newConection.execute(insert)
+conection.commit()
+
+newConection.close()
+conection.close()
+
+-- Atualizando um dado no banco de dados
+nomeCliente = "Bruno"
+idadeCliente = 25
+
+updateIdade = f'UPDATE tbl_cliente SET idade = "{idadeCliente}" WHERE nome = "{nomeCliente}"'
+
+newConection.execute(updateIdade)
+conection.commit()
+
+newConection.close()
+conection.close()
+
+-- Deletando um dado do banco de dados
+nomeCliente = "Laura"
+
+deleteCliente = f'DELETE FROM tbl_cliente WHERE nome = "{nomeCliente}"'
+
+newConection.execute(deleteCliente)
+conection.commit()
+
+newConection.close()
+conection.close()
+
+-- Consultando um dado no banco de dados
+consultSelect = 'SELECT * FROM tbl_cliente'
+
+newConection.execute(consultSelect)
+
+retorno = newConection.fetchall()
+
+print(retorno)
+
+newConection.close()
+conection.close()
+
+
