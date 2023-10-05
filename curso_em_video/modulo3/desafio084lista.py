@@ -30,5 +30,6 @@ print(f'Menor peso: {pessoa_mais_leve}kg')
 for p in pessoas:
     if p[1] == pessoa_mais_pesada:
         print(f'Pessoa mais pesada: [{p[0]}]')
-    elif p[1] == pessoa_mais_leve:
-        print(f'Pessoa mais leve: [{p[0]}]')  
+    else:
+        if p[1] == pessoa_mais_leve:
+            print(f'Pessoa mais leve: [{p[0]}]')  
