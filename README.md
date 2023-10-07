@@ -4,7 +4,7 @@ Repositório destinado a desenvolvimento de software em Python.
 
 * Django
 * Lógica de programação
-* Estrutura de dados
+* Estrutura de dados (tuplas / listas / dicionários)
 * Condicionais (if / elif / else)
 * Estruturas de repetição (for / while)
 * Funções
